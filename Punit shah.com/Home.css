@@ -167,7 +167,7 @@ nav ul li a i {
     color: var(--text);
     margin: 20px 0;
     line-height: 1.6;
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-weight: 400 !important;
     color: var(--para) !important;
 
@@ -229,7 +229,7 @@ body.dark {
     justify-content: space-between;
     /* padding: 5% 8%; */
     /* padding: 50px !important; */
-    padding: 20px 0px 20px 100px !important;
+    padding: 120px 0px 20px 100px !important;
     flex-wrap: wrap;
     min-height: 100vh;
 }
@@ -438,6 +438,28 @@ body.dark #role {
         border-radius: 12px;
         object-fit: contain;
         height: max-content;
+    }
+
+    .section-title {
+        font-size: 14px !important;
+    }
+
+    .hero h1 {
+        font-size: 22px !important;
+        white-space: nowrap;
+    }
+
+    .hero {
+        padding: 20px !important;
+    }
+
+    .hero p {
+        text-align: left;
+        /* make both edges even */
+        line-height: 1.6;
+    }
+    .stats-bg img{
+        height: 700px !important;
     }
 }
 
@@ -895,7 +917,6 @@ body.dark .about-card p {
     padding: 0 20px;
 }
 
-/* Filter buttons */
 .filter-buttons {
     display: flex;
     gap: 12px;
@@ -923,23 +944,20 @@ body.dark .about-card p {
     border-color: var(--accent);
 }
 
-/* Grid */
 .insight-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: 800px;
     gap: 22px;
 }
 
-/* Card */
 .insight-card {
-    /* background: var(--card); */
     background-color: #fff4e0;
     border: 2px solid rgba(0, 0, 0, 0.238);
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(15, 15, 15, 0.06);
     display: block;
-    /* important for JS show/hide logic */
     transition: transform 240ms ease, opacity 240ms ease;
     opacity: 1;
     transform: translateY(0);
@@ -953,7 +971,7 @@ body.dark .about-card p {
 
 .insight-img img {
     width: 100%;
-    height: 170px;
+    height: 200px;
     object-fit: cover;
     display: block;
 }
@@ -969,7 +987,6 @@ body.dark .about-card p {
     display: inline-block;
     padding: 6px 10px;
     border-radius: 8px;
-    /* background: #f3f3f3; */
     background: var(--para) !important;
     color: var(--para);
     color: var(--nav);
@@ -981,7 +998,7 @@ body.dark .about-card p {
 .insight-content h3 {
     margin: 0;
     color: #b8860b;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -1014,7 +1031,6 @@ body.dark .about-card p {
     color: #b8860b;
 }
 
-/* Responsive tweaks */
 @media (max-width:720px) {
     .container {
         margin: 20px auto;
@@ -1119,7 +1135,6 @@ body.dark .bio-card p {
     color: #E5E5E5;
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .bio-container {
         flex-direction: column;
@@ -1176,7 +1191,6 @@ body.dark .bio-card p {
     letter-spacing: 2px;
 }
 
-/* yellow lines on both sides */
 .section-title::before,
 .section-title::after {
     content: "";
@@ -1515,7 +1529,8 @@ body.dark .bio-card p {
 .honor-card {
     min-width: 220px;
     height: 220px;
-    background-color: var(--card-bg);
+    /* background-color: var(--card-bg); */
+    background-color: whitesmoke;
     border-radius: 16px;
     padding: 15px;
     display: flex;
@@ -3108,14 +3123,41 @@ body.dark .ventures-cta-wrapper p {
     margin-top: 15px;
     letter-spacing: 0.5px;
     padding-bottom: 10px;
-    
+
 }
 
 body.dark .signature-quote {
     color: #d4af37;
-    /* a softer gold for dark mode */
 }
 
-.heyyy{
+.heyyy {
     display: flex !important;
+}
+
+
+
+
+/* Mobile view - Horizontal scroll */
+@media (max-width: 768px) {
+    .ventures-cards-grid {
+        display: flex !important;
+        flex-direction: row !important; /* horizontal layout */
+        overflow-x: auto !important; /* enable horizontal scroll */
+        scroll-snap-type: x mandatory !important; /* smooth snap effect */
+        -webkit-overflow-scrolling: touch !important; /* smooth scrolling for iOS */
+        gap: 16px !important; /* spacing between cards */
+        padding-bottom: 10px !important;
+    }
+
+    .venture-card-box {
+        flex: 0 0 auto !important; /* prevent shrinking */
+        width: 80% !important; /* card width, adjust as needed */
+        scroll-snap-align: start !important; /* snap each card */
+        margin-right: 16px !important;
+    }
+
+    /* Optional: remove margin on last card */
+    .ventures-cards-grid .venture-card-box:last-child {
+        margin-right: 0 !important;
+    }
 }
