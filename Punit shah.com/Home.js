@@ -518,4 +518,8 @@ document.querySelector('.contact-form').addEventListener('submit', function (e) 
         });
 
 
-        
+        function copyLink() {
+  navigator.clipboard.writeText(window.location.href)
+    .then(() => alert('Page link copied to clipboard!'))
+    .catch(() => alert('Failed to copy link.'));
+}

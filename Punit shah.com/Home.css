@@ -458,7 +458,8 @@ body.dark #role {
         /* make both edges even */
         line-height: 1.6;
     }
-    .stats-bg img{
+
+    .stats-bg img {
         height: 700px !important;
     }
 }
@@ -1025,6 +1026,9 @@ body.dark .about-card p {
     gap: 12px;
     align-items: center;
     color: #222222;
+    cursor: pointer;
+    /* <-- makes the hand pointer appear */
+
 }
 
 .insight-footer i {
@@ -1466,6 +1470,10 @@ body.dark .bio-card p {
 
     .theme-toggle {
         width: 100%;
+    }
+
+    .stats-bg {
+        height: 700px !important;
     }
 }
 
@@ -3118,7 +3126,7 @@ body.dark .ventures-cta-wrapper p {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 16px;
-    color: #e5e5e5;
+    color: #b8860b;
     text-align: center;
     margin-top: 15px;
     letter-spacing: 0.5px;
@@ -3141,18 +3149,26 @@ body.dark .signature-quote {
 @media (max-width: 768px) {
     .ventures-cards-grid {
         display: flex !important;
-        flex-direction: row !important; /* horizontal layout */
-        overflow-x: auto !important; /* enable horizontal scroll */
-        scroll-snap-type: x mandatory !important; /* smooth snap effect */
-        -webkit-overflow-scrolling: touch !important; /* smooth scrolling for iOS */
-        gap: 16px !important; /* spacing between cards */
+        flex-direction: row !important;
+        /* horizontal layout */
+        overflow-x: auto !important;
+        /* enable horizontal scroll */
+        scroll-snap-type: x mandatory !important;
+        /* smooth snap effect */
+        -webkit-overflow-scrolling: touch !important;
+        /* smooth scrolling for iOS */
+        gap: 16px !important;
+        /* spacing between cards */
         padding-bottom: 10px !important;
     }
 
     .venture-card-box {
-        flex: 0 0 auto !important; /* prevent shrinking */
-        width: 80% !important; /* card width, adjust as needed */
-        scroll-snap-align: start !important; /* snap each card */
+        flex: 0 0 auto !important;
+        /* prevent shrinking */
+        width: 80% !important;
+        /* card width, adjust as needed */
+        scroll-snap-align: start !important;
+        /* snap each card */
         margin-right: 16px !important;
     }
 
