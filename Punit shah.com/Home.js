@@ -523,3 +523,4 @@ document.querySelector('.contact-form').addEventListener('submit', function (e) 
     .then(() => alert('Page link copied to clipboard!'))
     .catch(() => alert('Failed to copy link.'));
 }
+
