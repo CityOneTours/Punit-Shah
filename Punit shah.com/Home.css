@@ -141,6 +141,11 @@ nav ul li a i {
     .menu-toggle {
         display: block;
     }
+
+    .ps-footer-wrap {
+        gap: 0px !important;
+
+    }
 }
 
 /* Hero Section */
@@ -1185,6 +1190,11 @@ body.dark .bio-card p {
         max-width: 100%;
         border-radius: 10px;
         height: 300px;
+        object-fit: cover;
+    }
+
+    .bio-container {
+        padding-top: 20px !important;
     }
 }
 
@@ -1465,6 +1475,15 @@ body.dark .bio-card p {
 
     .modal-iframe {
         height: calc(95vh - 70px);
+    }
+
+    .ps-details-area {
+        text-align: center !important;
+        padding-left: 0px !important;
+    }
+
+    .ps-footer-wrap {
+        gap: 20px !important;
     }
 }
 
@@ -2100,20 +2119,23 @@ body.dark .view-more-btn:hover {
     }
 
     .modal-content {
-        height: 50vh;
+        height: 80vh;
     }
 
     .stats-container {
         gap: 10px !important;
         padding-top: 10px !important;
     }
-    .stats-section{
+
+    .stats-section {
         height: 540px !important;
     }
-    .stats-bg{
+
+    .stats-bg {
         height: 540px !important;
     }
-    .stats-bg img{
+
+    .stats-bg img {
         height: 540px !important;
     }
 }
@@ -3005,6 +3027,10 @@ body.dark-theme .cta-btn-style.secondary-btn:hover {
         background-color: #b8860b;
         transform: translateY(-50%);
     }
+
+    .card-title {
+        font-size: 16px;
+    }
 }
 
 body.dark .venture-card-box {
@@ -3338,7 +3364,7 @@ body.dark .signature-quote {
 /* Background */
 /* Background */
 .ps-footer-bg {
-    background: url('images/web banner DAMI psd 1.jpg') no-repeat center center;
+    background: url('images/DEMO 1 1 2  11d.png') no-repeat center center;
     background-size: cover;
     color: #ffffff;
     padding: 60px 20px;
@@ -3352,7 +3378,7 @@ body.dark .signature-quote {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 200px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -3366,8 +3392,8 @@ body.dark .signature-quote {
 }
 
 .ps-profile-pic {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 2px solid #d8b56a;
     background-color: white;
@@ -3377,8 +3403,10 @@ body.dark .signature-quote {
 /* Center Section */
 .ps-details-area {
     flex: 2;
-    text-align: center;
+    text-align: start;
+    /* changed from center to start */
     min-width: 300px;
+    padding-left: 80px;
 }
 
 .ps-name {
@@ -3388,7 +3416,7 @@ body.dark .signature-quote {
 }
 
 .ps-role {
-    color: #d8b56a;
+    color: #d1d0cd;
     letter-spacing: 2px;
     font-weight: 500;
     margin-bottom: 20px;
@@ -3401,7 +3429,7 @@ body.dark .signature-quote {
 }
 
 .ps-contact-list li {
-    margin: 8px 0;
+    margin: 15px 0;
     font-size: 15px;
 }
 
@@ -3434,6 +3462,8 @@ body.dark .signature-quote {
 }
 
 
+
+
 .ps-brand {
     font-size: 70px;
     font-weight: 700;
@@ -3443,15 +3473,32 @@ body.dark .signature-quote {
 
 
 .ps-social-icons a {
-    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 2px;
+    background-color: #ffffff;
+    /* white background */
+    color: #0b2341;
+    /* icon color (dark blue) */
+    border-radius: 50%;
+    /* makes it circular */
     font-size: 18px;
-    margin: 0 8px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .ps-social-icons a:hover {
-    color: #d8b56a;
+    background-color: #d8b56a;
+    /* gold hover color */
+    color: #ffffff;
+    /* white icon on hover */
+    transform: scale(1.1);
+    /* smooth zoom effect */
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -3499,3 +3546,13 @@ body.dark .signature-quote {
         display: none !important;
     }
 }
+
+
+@media (max-width: 1240px) {
+
+    .ps-footer-wrap {
+        gap: 50px !important;
+
+    }
+}
+

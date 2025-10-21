@@ -560,6 +560,20 @@
       .journey-section h2 {
           font-size: 1.8rem;
       }
+
+                  .ps-footer-wrap {
+                gap: 0px !important;
+
+            }
+
+            .ps-details-area {
+                text-align: center !important;
+                padding-left: 0px !important;
+            }
+
+            .ps-footer-wrap {
+                gap: 20px !important;
+            }
   }
 
   @media (max-width: 480px) {
@@ -691,131 +705,161 @@
 
 
 
-/* Background */
-/* Background */
-.ps-footer-bg {
-  background: url('images/web banner DAMI psd 1.jpg') no-repeat center center;
-  background-size: cover;
-  color: #ffffff;
-  padding: 60px 20px;
-  font-family: "Poppins", sans-serif;
-}
+        /* Background */
+        /* Background */
+        .ps-footer-bg {
+            background: url('images/DEMO 1 1 2  11d.png') no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+            padding: 60px 20px;
+            font-family: "Poppins", sans-serif;
+        }
 
 
-/* Wrapper Layout */
-.ps-footer-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        /* Wrapper Layout */
+        .ps-footer-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 200px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* Left Section */
-.ps-photo-area {
-  flex: 1;
-  text-align: center;
-  min-width: 250px;
-  border-radius: 1000px;
-}
+        /* Left Section */
+        .ps-photo-area {
+            flex: 1;
+            text-align: center;
+            min-width: 250px;
+            border-radius: 1000px;
+        }
 
-.ps-profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 2px solid #d8b56a;
-  background-color: white;
-  object-fit: cover;
-}
+        .ps-profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 2px solid #d8b56a;
+            background-color: white;
+            object-fit: cover;
+        }
 
-/* Center Section */
-.ps-details-area {
-  flex: 2;
-  text-align: center;
-  min-width: 300px;
-}
+        /* Center Section */
+        .ps-details-area {
+            flex: 2;
+            text-align: start;
+            min-width: 300px;
+                padding-left: 80px;
 
-.ps-name {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0;
-}
+        }
 
-.ps-role {
-  color: #d8b56a;
-  letter-spacing: 2px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
+        .ps-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+        }
 
-.ps-contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+        .ps-role {
+            color: #d8b56a;
+            letter-spacing: 2px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
 
-.ps-contact-list li {
-  margin: 8px 0;
-  font-size: 15px;
-}
+        .ps-contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.ps-contact-list i {
-  color: #d8b56a;
-  margin-right: 10px;
-}
+        .ps-contact-list li {
+            margin: 15px 0;
+            font-size: 15px;
+        }
 
-.ps-contact-list a {
-  color: #fff;
-  text-decoration: none;
-}
+        .ps-contact-list i {
+            color: #d8b56a;
+            margin-right: 10px;
+        }
 
-.ps-contact-list a:hover {
-  color: #d8b56a;
-}
+        .ps-contact-list a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-/* Right Section */
-.ps-logo-area {
-  flex: 1;
-  text-align: center;
-  min-width: 250px;
-}
-.ps-logo img.footer-logo {
-  width: 120px; /* adjust as needed */
-  height: auto;
-  object-fit: contain;
-}
+        .ps-contact-list a:hover {
+            color: #d8b56a;
+        }
+
+        /* Right Section */
+        .ps-logo-area {
+            flex: 1;
+            text-align: center;
+            min-width: 250px;
+        }
+
+        .ps-logo img.footer-logo {
+            width: 120px;
+            /* adjust as needed */
+            height: auto;
+            object-fit: contain;
+        }
 
 
-.ps-brand {
-  font-size: 70px;
-  font-weight: 700;
-  color: #d8b56a;
-  margin-bottom: 15px;
-}
+        .ps-brand {
+            font-size: 70px;
+            font-weight: 700;
+            color: #d8b56a;
+            margin-bottom: 15px;
+        }
 
 
 .ps-social-icons a {
-  color: #ffffff;
-  font-size: 18px;
-  margin: 0 8px;
-  transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 2px;
+    background-color: #ffffff;
+    /* white background */
+    color: #0b2341;
+    /* icon color (dark blue) */
+    border-radius: 50%;
+    /* makes it circular */
+    font-size: 18px;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .ps-social-icons a:hover {
-  color: #d8b56a;
+    background-color: #d8b56a;
+    /* gold hover color */
+    color: #ffffff;
+    /* white icon on hover */
+    transform: scale(1.1);
+    /* smooth zoom effect */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .ps-footer-wrap {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .ps-profile-pic {
-    width: 150px;
-    height: 150px;
-  }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ps-footer-wrap {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .ps-profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+
+        @media (max-width: 1240px) {
+
+    .ps-footer-wrap {
+        gap: 50px !important;
+
+    }
 }
