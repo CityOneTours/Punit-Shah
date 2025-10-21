@@ -53,12 +53,12 @@ const episodes = {
     2: {
         title: 'Episode 2',
         description: 'Expanding horizons - Strategic planning and execution in international markets.',
-        videoUrl: 'https://www.youtube.com/embed/qIhRe0dAWG8?autoplay=1'
+videoUrl: 'https://www.youtube.com/embed/mDZLApzjxsI?autoplay=1'
     },
     3: {
         title: 'Episode 3',
         description: 'Breaking barriers - Overcoming obstacles and creating lasting impact.',
-        videoUrl: 'https://www.youtube.com/embed/ltrmIDwX_J4?autoplay=1'
+videoUrl: 'https://www.youtube.com/embed/MiehvcqbFRo?autoplay=1'
     },
     4: {
         title: 'Episode 4',

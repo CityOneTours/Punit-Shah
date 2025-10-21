@@ -846,3 +846,202 @@
             }
 
         }
+
+
+
+
+        /* ===== Desktop Sidebar (Right Side) ===== */
+.social-sidebar-right {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #996600;
+    padding: 15px 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #222;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* ===== Mobile View: Bottom Navbar ===== */
+@media (max-width: 768px) {
+    .social-sidebar-right {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transform: none;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: #996600;
+        padding: 10px 0;
+        border-radius: 0;
+        box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icon {
+        font-size: 22px;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icon {
+        font-size: 20px;
+    }
+}
+
+
+
+
+/* Background */
+/* Background */
+.ps-footer-bg {
+  background: url('images/web banner DAMI psd 1.jpg') no-repeat center center;
+  background-size: cover;
+  color: #ffffff;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* Wrapper Layout */
+.ps-footer-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left Section */
+.ps-photo-area {
+  flex: 1;
+  text-align: center;
+  min-width: 250px;
+  border-radius: 1000px;
+}
+
+.ps-profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #d8b56a;
+  background-color: white;
+  object-fit: cover;
+}
+
+/* Center Section */
+.ps-details-area {
+  flex: 2;
+  text-align: center;
+  min-width: 300px;
+}
+
+.ps-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.ps-role {
+  color: #d8b56a;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.ps-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ps-contact-list li {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.ps-contact-list i {
+  color: #d8b56a;
+  margin-right: 10px;
+}
+
+.ps-contact-list a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.ps-contact-list a:hover {
+  color: #d8b56a;
+}
+
+/* Right Section */
+.ps-logo-area {
+  flex: 1;
+  text-align: center;
+  min-width: 250px;
+}
+.ps-logo img.footer-logo {
+  width: 120px; /* adjust as needed */
+  height: auto;
+  object-fit: contain;
+}
+
+
+.ps-brand {
+  font-size: 70px;
+  font-weight: 700;
+  color: #d8b56a;
+  margin-bottom: 15px;
+}
+
+
+.ps-social-icons a {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0 8px;
+  transition: 0.3s;
+}
+
+.ps-social-icons a:hover {
+  color: #d8b56a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ps-footer-wrap {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ps-profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+}
