@@ -1108,6 +1108,7 @@ body.dark .section-title {
     max-width: 100%;
     border-radius: 18px;
     height: 600px;
+    object-fit: cover;
 }
 
 .bio-content {
