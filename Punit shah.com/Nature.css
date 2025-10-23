@@ -561,19 +561,19 @@
           font-size: 1.8rem;
       }
 
-                  .ps-footer-wrap {
-                gap: 0px !important;
+      .ps-footer-wrap {
+          gap: 0px !important;
 
-            }
+      }
 
-            .ps-details-area {
-                text-align: center !important;
-                padding-left: 0px !important;
-            }
+      .ps-details-area {
+          text-align: center !important;
+          padding-left: 0px !important;
+      }
 
-            .ps-footer-wrap {
-                gap: 20px !important;
-            }
+      .ps-footer-wrap {
+          gap: 20px !important;
+      }
   }
 
   @media (max-width: 480px) {
@@ -628,11 +628,13 @@
       color: whitesmoke;
 
   }
-    body.dark .benefit-item  {
+
+  body.dark .benefit-item {
       background-color: rgba(0, 0, 0, 0.19);
 
   }
-     body.dark .benefit-item p {
+
+  body.dark .benefit-item p {
       color: whitesmoke;
 
   }
@@ -640,226 +642,284 @@
 
 
   /* ===== Desktop Sidebar (Right Side) ===== */
-.social-sidebar-right {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    background-color: #996600;
-    padding: 15px 10px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+  .social-sidebar-right {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: #996600;
+      padding: 15px 10px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-icon {
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+  }
+
+  .social-icon:hover {
+      transform: scale(1.2);
+      color: #222;
+      background-color: white;
+      border-radius: 50%;
+      padding: 5px;
+  }
+
+  /* ===== Mobile View: Bottom Navbar ===== */
+  @media (max-width: 768px) {
+      .social-sidebar-right {
+          top: auto;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          transform: none;
+          flex-direction: row;
+          justify-content: space-around;
+          background-color: #996600;
+          padding: 10px 0;
+          border-radius: 0;
+          box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-icon {
+          font-size: 22px;
+      }
+
+      .social-icon:hover {
+          transform: translateY(-3px);
+      }
+  }
+
+  @media (max-width: 480px) {
+      .social-icon {
+          font-size: 20px;
+      }
+  }
+
+
+
+  /* Background */
+  /* Background */
+  .ps-footer-bg {
+      background: url('images/Footer image 1.jpg') no-repeat center center;
+      background-size: cover;
+      color: #ffffff;
+      padding: 20px 20px;
+      font-family: "Poppins", sans-serif;
+  }
+
+
+  /* Wrapper Layout */
+  .ps-footer-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 200px;
+      max-width: 1300px;
+      margin: 0 auto;
+  }
+
+  /* Left Section */
+  .ps-photo-area {
+      flex: 1;
+      text-align: center;
+      min-width: 250px;
+      border-radius: 1000px;
+  }
+
+  .ps-profile-pic {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 2px solid #d8b56a;
+      background-color: white;
+      object-fit: cover;
+  }
+
+  /* Center Section */
+  .ps-details-area {
+      flex: 2;
+      text-align: start;
+      min-width: 300px;
+      padding-left: 50px;
+
+  }
+
+  .ps-name {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0;
+  }
+
+  .ps-role {
+      color: #d8b56a;
+      letter-spacing: 2px;
+      font-weight: 500;
+      margin-bottom: 20px;
+  }
+
+  .ps-contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  .ps-contact-list li {
+      margin: 15px 0;
+      font-size: 15px;
+  }
+
+  .ps-contact-list i {
+      color: #d8b56a;
+      margin-right: 10px;
+  }
+
+  .ps-contact-list a {
+      color: #fff;
+      text-decoration: none;
+  }
+
+  .ps-contact-list a:hover {
+      color: #d8b56a;
+  }
+
+  /* Right Section */
+  .ps-logo-area {
+      flex: 1;
+      text-align: center;
+      min-width: 250px;
+  }
+
+  .ps-logo img.footer-logo {
+      width: 100px;
+      /* adjust as needed */
+      height: auto;
+      object-fit: contain;
+  }
+
+
+  .ps-brand {
+      font-size: 70px;
+      font-weight: 700;
+      color: #d8b56a;
+      margin-bottom: 15px;
+  }
+
+
+  .ps-social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin: 0 2px;
+      background-color: #ffffff;
+      /* white background */
+      color: #0b2341;
+      /* icon color (dark blue) */
+      border-radius: 50%;
+      /* makes it circular */
+      font-size: 18px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+  }
+
+  .ps-social-icons a:hover {
+      background-color: #d8b56a;
+      /* gold hover color */
+      color: #ffffff;
+      /* white icon on hover */
+      transform: scale(1.1);
+      /* smooth zoom effect */
+  }
+
+
+  /* Responsive */
+  @media (max-width: 768px) {
+      .ps-footer-wrap {
+          flex-direction: column;
+          text-align: center;
+      }
+
+      .ps-profile-pic {
+          width: 150px;
+          height: 150px;
+      }
+  }
+
+
+  @media (max-width: 1240px) {
+
+      .ps-footer-wrap {
+          gap: 50px !important;
+
+      }
+  }
+
+
+  /* Company Logos Section */
+.ps-company-logos {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    gap: 18px;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    gap: 8px;
+    margin: 20px 0;
 }
 
-.social-icon {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.ps-company-logos img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    /* background-color: white; */
+    border-radius: 8px;
+    padding: 6px;
 }
 
-.social-icon:hover {
-    transform: scale(1.2);
-    color: #222;
-    background-color: white;
-    border-radius: 50%;
-    padding: 5px;
+.ps-company-logos img:hover {
+    transform: scale(1.1);
 }
 
-/* ===== Mobile View: Bottom Navbar ===== */
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .ps-company-logos img {
+        width: 60px;
+    }
+}
+
 @media (max-width: 768px) {
-    .social-sidebar-right {
-        top: auto;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        transform: none;
-        flex-direction: row;
-        justify-content: space-around;
-        background-color: #996600;
-        padding: 10px 0;
-        border-radius: 0;
-        box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+    .ps-footer-wrap {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
     }
 
-    .social-icon {
-        font-size: 22px;
+    .ps-company-logos {
+        gap: 10px;
     }
 
-    .social-icon:hover {
-        transform: translateY(-3px);
+    .ps-company-logos img {
+        width: 55px;
     }
 }
 
 @media (max-width: 480px) {
-    .social-icon {
-        font-size: 20px;
+    .ps-company-logos img {
+        width: 85px;
     }
 }
 
-
-
-        /* Background */
-        /* Background */
-        .ps-footer-bg {
-            background: url('images/DEMO 1 1 2  11d.png') no-repeat center center;
-            background-size: cover;
-            color: #ffffff;
-            padding: 60px 20px;
-            font-family: "Poppins", sans-serif;
-        }
-
-
-        /* Wrapper Layout */
-        .ps-footer-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 200px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Left Section */
-        .ps-photo-area {
-            flex: 1;
-            text-align: center;
-            min-width: 250px;
-            border-radius: 1000px;
-        }
-
-        .ps-profile-pic {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            border: 2px solid #d8b56a;
-            background-color: white;
-            object-fit: cover;
-        }
-
-        /* Center Section */
-        .ps-details-area {
-            flex: 2;
-            text-align: start;
-            min-width: 300px;
-                padding-left: 80px;
-
-        }
-
-        .ps-name {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .ps-role {
-            color: #d8b56a;
-            letter-spacing: 2px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .ps-contact-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .ps-contact-list li {
-            margin: 15px 0;
-            font-size: 15px;
-        }
-
-        .ps-contact-list i {
-            color: #d8b56a;
-            margin-right: 10px;
-        }
-
-        .ps-contact-list a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .ps-contact-list a:hover {
-            color: #d8b56a;
-        }
-
-        /* Right Section */
-        .ps-logo-area {
-            flex: 1;
-            text-align: center;
-            min-width: 250px;
-        }
-
-        .ps-logo img.footer-logo {
-            width: 120px;
-            /* adjust as needed */
-            height: auto;
-            object-fit: contain;
-        }
-
-
-        .ps-brand {
-            font-size: 70px;
-            font-weight: 700;
-            color: #d8b56a;
-            margin-bottom: 15px;
-        }
-
-
-.ps-social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin: 0 2px;
-    background-color: #ffffff;
-    /* white background */
-    color: #0b2341;
-    /* icon color (dark blue) */
-    border-radius: 50%;
-    /* makes it circular */
-    font-size: 18px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.ps-social-icons a:hover {
-    background-color: #d8b56a;
-    /* gold hover color */
-    color: #ffffff;
-    /* white icon on hover */
-    transform: scale(1.1);
-    /* smooth zoom effect */
-}
-
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .ps-footer-wrap {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .ps-profile-pic {
-                width: 150px;
-                height: 150px;
-            }
-        }
-
-
-        @media (max-width: 1240px) {
-
-    .ps-footer-wrap {
-        gap: 50px !important;
-
-    }
+.size {
+    width: 100px;
 }

@@ -2346,7 +2346,7 @@ body.dark .contact-form p {
 .footer-container {
     position: relative;
     z-index: 2;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -2357,7 +2357,7 @@ body.dark .contact-form p {
 /* Logo and About */
 .footer-logo {
     width: 130px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     filter: brightness(1.1);
 }
 
@@ -2616,17 +2616,20 @@ body.dark-theme .venture-card-box:hover {
     height: 180px;
     position: relative;
     overflow: hidden;
-    background-color: #f5f5f5; /* use background-color instead of background shorthand */
+    background-color: #f5f5f5;
+    /* use background-color instead of background shorthand */
     display: flex;
     justify-content: center;
     align-items: center;
 
     /* 🧩 iPhone Safari fixes */
-    -webkit-transform: translateZ(0); /* force repaint on Safari */
+    -webkit-transform: translateZ(0);
+    /* force repaint on Safari */
     -webkit-backface-visibility: hidden;
     transform: translate3d(0, 0, 0);
     will-change: transform;
-    isolation: isolate; /* ensures background paints properly under child elements */
+    isolation: isolate;
+    /* ensures background paints properly under child elements */
 }
 
 
@@ -3373,10 +3376,10 @@ body.dark .signature-quote {
 /* Background */
 /* Background */
 .ps-footer-bg {
-    background: url('images/DEMO 1 1 2  11d.png') no-repeat center center;
+    background: url('images/Footer image 1.jpg') no-repeat center center;
     background-size: cover;
     color: #ffffff;
-    padding: 60px 20px;
+    /* padding: 20px 20px; */
     font-family: "Poppins", sans-serif;
 }
 
@@ -3388,7 +3391,7 @@ body.dark .signature-quote {
     align-items: center;
     justify-content: space-between;
     gap: 200px;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -3415,7 +3418,7 @@ body.dark .signature-quote {
     text-align: start;
     /* changed from center to start */
     min-width: 300px;
-    padding-left: 80px;
+    padding-left: 50px;
 }
 
 .ps-name {
@@ -3464,7 +3467,7 @@ body.dark .signature-quote {
 }
 
 .ps-logo img.footer-logo {
-    width: 120px;
+    width: 100px;
     /* adjust as needed */
     height: auto;
     object-fit: contain;
@@ -3603,3 +3606,59 @@ html {
 }
 
 
+/* Company Logos Section */
+.ps-company-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.ps-company-logos img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    /* background-color: white; */
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.ps-company-logos img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .ps-company-logos img {
+        width: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ps-footer-wrap {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .ps-company-logos {
+        gap: 10px;
+    }
+
+    .ps-company-logos img {
+        width: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ps-company-logos img {
+        width: 85px;
+    }
+}
+
+.size {
+    width: 100px;
+}

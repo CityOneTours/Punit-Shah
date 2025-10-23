@@ -490,7 +490,7 @@
                 margin: 0 auto;
             }
 
-            
+
             .ps-footer-wrap {
                 gap: 0px !important;
 
@@ -561,77 +561,77 @@
 
 
         /* ===== Desktop Sidebar (Right Side) ===== */
-.social-sidebar-right {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    background-color: #996600;
-    padding: 15px 10px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+        .social-sidebar-right {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: #996600;
+            padding: 15px 10px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
 
-.social-icon {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
+        .social-icon {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-.social-icon:hover {
-    transform: scale(1.2);
-    color: #222;
-    background-color: white;
-    border-radius: 50%;
-    padding: 5px;
-}
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #222;
+            background-color: white;
+            border-radius: 50%;
+            padding: 5px;
+        }
 
-/* ===== Mobile View: Bottom Navbar ===== */
-@media (max-width: 768px) {
-    .social-sidebar-right {
-        top: auto;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        transform: none;
-        flex-direction: row;
-        justify-content: space-around;
-        background-color: #996600;
-        padding: 10px 0;
-        border-radius: 0;
-        box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
-    }
+        /* ===== Mobile View: Bottom Navbar ===== */
+        @media (max-width: 768px) {
+            .social-sidebar-right {
+                top: auto;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                transform: none;
+                flex-direction: row;
+                justify-content: space-around;
+                background-color: #996600;
+                padding: 10px 0;
+                border-radius: 0;
+                box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+            }
 
-    .social-icon {
-        font-size: 22px;
-    }
+            .social-icon {
+                font-size: 22px;
+            }
 
-    .social-icon:hover {
-        transform: translateY(-3px);
-    }
-}
+            .social-icon:hover {
+                transform: translateY(-3px);
+            }
+        }
 
-@media (max-width: 480px) {
-    .social-icon {
-        font-size: 20px;
-    }
-}
+        @media (max-width: 480px) {
+            .social-icon {
+                font-size: 20px;
+            }
+        }
 
 
         /* Background */
         /* Background */
         .ps-footer-bg {
-            background: url('images/DEMO 1 1 2  11d.png') no-repeat center center;
+            background: url('images/Footer image 1.jpg') no-repeat center center;
             background-size: cover;
             color: #ffffff;
-            padding: 60px 20px;
+            padding: 10px 20px;
             font-family: "Poppins", sans-serif;
         }
 
@@ -643,7 +643,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 200px;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
@@ -669,7 +669,7 @@
             flex: 2;
             text-align: start;
             min-width: 300px;
-                padding-left: 80px;
+            padding-left: 50px;
 
         }
 
@@ -719,7 +719,7 @@
         }
 
         .ps-logo img.footer-logo {
-            width: 120px;
+            width: 100px;
             /* adjust as needed */
             height: auto;
             object-fit: contain;
@@ -734,32 +734,32 @@
         }
 
 
-.ps-social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin: 0 2px;
-    background-color: #ffffff;
-    /* white background */
-    color: #0b2341;
-    /* icon color (dark blue) */
-    border-radius: 50%;
-    /* makes it circular */
-    font-size: 18px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
+        .ps-social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 2px;
+            background-color: #ffffff;
+            /* white background */
+            color: #0b2341;
+            /* icon color (dark blue) */
+            border-radius: 50%;
+            /* makes it circular */
+            font-size: 18px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
 
-.ps-social-icons a:hover {
-    background-color: #d8b56a;
-    /* gold hover color */
-    color: #ffffff;
-    /* white icon on hover */
-    transform: scale(1.1);
-    /* smooth zoom effect */
-}
+        .ps-social-icons a:hover {
+            background-color: #d8b56a;
+            /* gold hover color */
+            color: #ffffff;
+            /* white icon on hover */
+            transform: scale(1.1);
+            /* smooth zoom effect */
+        }
 
 
         /* Responsive */
@@ -778,8 +778,67 @@
 
         @media (max-width: 1240px) {
 
-    .ps-footer-wrap {
-        gap: 50px !important;
+            .ps-footer-wrap {
+                gap: 50px !important;
 
-    }
-}
+            }
+        }
+
+
+
+        /* Company Logos Section */
+        .ps-company-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .ps-company-logos img {
+            width: 100px;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            /* background-color: white; */
+            border-radius: 8px;
+            padding: 6px;
+        }
+
+        .ps-company-logos img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .ps-company-logos img {
+                width: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ps-footer-wrap {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .ps-company-logos {
+                gap: 10px;
+            }
+
+            .ps-company-logos img {
+                width: 55px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ps-company-logos img {
+                width: 85px;
+            }
+        }
+
+        .size {
+            width: 100px;
+        }
