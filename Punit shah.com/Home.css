@@ -357,7 +357,10 @@ body.dark {
     .hero h1 {
         font-size: 2rem;
     }
-
+.footer-bottom{
+margin-top: 0px;
+margin-bottom: 50px;
+}
 }
 
 @keyframes fadeIn {
@@ -509,7 +512,7 @@ body.dark .section-title {
 }
 
 .about-image img {
-    width: 400px;
+    /* width: 400px; */
     max-width: 100%;
     border-radius: 10px;
     height: 550px;
