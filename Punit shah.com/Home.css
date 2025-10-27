@@ -357,10 +357,11 @@ body.dark {
     .hero h1 {
         font-size: 2rem;
     }
-.footer-bottom{
-margin-top: 0px;
-margin-bottom: 50px;
-}
+
+    .footer-bottom {
+        margin-top: 0px;
+        margin-bottom: 50px;
+    }
 }
 
 @keyframes fadeIn {
