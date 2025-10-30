@@ -861,7 +861,7 @@
             overflow: hidden;
 
             /* ✅ Add your background image here */
-            background: url("images/sahara-desert-transparent-background_888418-53885.png") center/cover no-repeat;
+             
         }
 
 
@@ -869,9 +869,9 @@
         .footer-blur-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(15, 15, 15, 0.7);
+            background: rgb(15, 15, 15);
             /* backdrop-filter: blur(18px); */
-            -webkit-backdrop-filter: blur(18px);
+              
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             z-index: 0;

@@ -1,0 +1,55 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  /* background-color: #0b2545; */
+}
+
+.signature-section {
+  width: 100%;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #0b2545; */
+  overflow: hidden;
+}
+
+.signature-container {
+  width: 100%;
+  max-width: 1600px; 
+  padding: 10px;
+}
+
+.signature-image {
+  width: 100%;
+  height: auto;
+  max-height: 90vh; 
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  object-fit: contain;
+}
+
+@media (max-width: 992px) {
+  .signature-container {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 576px) {
+  .signature-section {
+    padding: 10px;
+    height: auto;
+  }
+
+  .signature-image {
+    max-height: none;
+    width: 100%;
+  }
+}

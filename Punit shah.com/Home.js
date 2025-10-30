@@ -524,3 +524,5 @@ document.querySelector('.contact-form').addEventListener('submit', function (e) 
     .catch(() => alert('Failed to copy link.'));
 }
 
+
+
