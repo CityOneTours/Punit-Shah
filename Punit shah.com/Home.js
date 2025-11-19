@@ -52,34 +52,32 @@ const episodes = {
     },
     2: {
         title: 'Episode 2',
-        description: 'Expanding horizons - Strategic planning and execution in international markets.',
-videoUrl: 'https://www.youtube.com/embed/mDZLApzjxsI?autoplay=1'
+        description: 'From Dubai to Uganda - The Real Story Behind My Journey.',
+        videoUrl: 'https://www.youtube.com/embed/z7S8qCKrVB0?autoplay=1'
     },
     3: {
         title: 'Episode 3',
-        description: 'Breaking barriers - Overcoming obstacles and creating lasting impact.',
-videoUrl: 'https://www.youtube.com/embed/MiehvcqbFRo?autoplay=1'
+        description: 'The Real Challenges of Building in Two Countries.',
+        videoUrl: 'https://www.youtube.com/embed/hH07GIoHx1c?autoplay=1'
     },
-    4: {
-        title: 'Episode 4',
-        description: 'Global vision - Building connections and fostering growth across borders.',
-        videoUrl: 'https://www.youtube.com/embed/eSB8IfBKp-A?autoplay=1'
+
+4: {
+    title: 'Episode 4',
+    description: 'Global vision - Building connections and fostering growth across borders.',
+    videoUrl: 'https://www.youtube.com/embed/mDZLApzjxsI?autoplay=1'
+},
+
+    5: {
+        title: 'Episode 5',
+        description: 'The teaser to my new series.',
+        videoUrl: 'https://www.youtube.com/embed/MiehvcqbFRo?autoplay=1'
     },
-    // 5: {
-    //     title: 'Episode 3',
-    //     description: 'Breaking barriers - Overcoming obstacles and creating lasting impact.',
-    //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-    // },
-    // 6: {
-    //     title: 'Episode 3',
-    //     description: 'Breaking barriers - Overcoming obstacles and creating lasting impact.',
-    //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-    // },
-    // 7: {
-    //     title: 'Episode 3',
-    //     description: 'Breaking barriers - Overcoming obstacles and creating lasting impact.',
-    //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-    // },
+6: {
+    title: 'Episode 6',
+    description: 'Global vision - Building connections and fostering growth across borders.',
+    videoUrl: 'https://www.youtube.com/embed/SPA0fJpwTVw?autoplay=1'
+},
+
 
 };
 
@@ -290,145 +288,145 @@ document.getElementById('modalIframe').addEventListener('load', function () {
 // awads
 
 const awardsContainer = document.getElementById('awardsContainer');
-        const scrollLeftBtn = document.getElementById('scrollLeft');
-        const scrollRightBtn = document.getElementById('scrollRight');
-        const currentAwardSpan = document.getElementById('currentAward');
-        const totalAwardsSpan = document.getElementById('totalAwards');
-        const autoScrollToggle = document.getElementById('autoScrollToggle');
-        
-        let autoScrollInterval = null;
+const scrollLeftBtn = document.getElementById('scrollLeft');
+const scrollRightBtn = document.getElementById('scrollRight');
+const currentAwardSpan = document.getElementById('currentAward');
+const totalAwardsSpan = document.getElementById('totalAwards');
+const autoScrollToggle = document.getElementById('autoScrollToggle');
 
-        const awardData = [
-            { title: "2024 TripAdvisor Excellence", description: "Certificate of Excellence for outstanding service and customer satisfaction in 2024" },
-            { title: "Star Achievement Award", description: "Recognized for exceptional performance and industry leadership" },
-            { title: "BNI Appreciation", description: "Honored for outstanding contribution to business networking" },
-            { title: "Red Trophy", description: "Annual achievement award for business excellence" },
-            { title: "BNI Retail Excellence", description: "Top retail partner recognition for exceptional service" },
-            { title: "2016 TripAdvisor Excellence", description: "Certificate of Excellence for consistent high ratings" },
-            { title: "Excellence Trophy", description: "Premium award for sustained business growth" },
-            { title: "Gold Medal Achievement", description: "First place recognition in industry category" },
-            { title: "Business Achievement Award", description: "Recognized for innovation and business development" },
-            { title: "Business Excellence Award", description: "Top tier recognition for outstanding business practices" }
-        ];
+let autoScrollInterval = null;
 
-        // Update total awards count
-        totalAwardsSpan.textContent = document.querySelectorAll('.award-card').length;
+const awardData = [
+    { title: "2024 TripAdvisor Excellence", description: "Certificate of Excellence for outstanding service and customer satisfaction in 2024" },
+    { title: "Star Achievement Award", description: "Recognized for exceptional performance and industry leadership" },
+    { title: "BNI Appreciation", description: "Honored for outstanding contribution to business networking" },
+    { title: "Red Trophy", description: "Annual achievement award for business excellence" },
+    { title: "BNI Retail Excellence", description: "Top retail partner recognition for exceptional service" },
+    { title: "2016 TripAdvisor Excellence", description: "Certificate of Excellence for consistent high ratings" },
+    { title: "Excellence Trophy", description: "Premium award for sustained business growth" },
+    { title: "Gold Medal Achievement", description: "First place recognition in industry category" },
+    { title: "Business Achievement Award", description: "Recognized for innovation and business development" },
+    { title: "Business Excellence Award", description: "Top tier recognition for outstanding business practices" }
+];
 
-        // Scroll functionality
-        function scrollAwards(direction) {
-            const scrollAmount = 250;
-            if (direction === 'left') {
-                awardsContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            } else {
-                awardsContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
+// Update total awards count
+totalAwardsSpan.textContent = document.querySelectorAll('.award-card').length;
+
+// Scroll functionality
+function scrollAwards(direction) {
+    const scrollAmount = 250;
+    if (direction === 'left') {
+        awardsContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+        awardsContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}
+
+// Update current award number on scroll
+awardsContainer.addEventListener('scroll', () => {
+    const cardWidth = 245; // 220px width + 25px gap
+    const currentIndex = Math.round(awardsContainer.scrollLeft / cardWidth) + 1;
+    currentAwardSpan.textContent = Math.min(currentIndex, awardData.length);
+});
+
+// Auto scroll functionality
+function toggleAutoScroll() {
+    if (autoScrollToggle.checked) {
+        startAutoScroll();
+    } else {
+        stopAutoScroll();
+    }
+}
+
+function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+        const maxScroll = awardsContainer.scrollWidth - awardsContainer.clientWidth;
+        if (awardsContainer.scrollLeft >= maxScroll) {
+            awardsContainer.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            awardsContainer.scrollBy({ left: 250, behavior: 'smooth' });
         }
+    }, 3000);
+}
 
-        // Update current award number on scroll
-        awardsContainer.addEventListener('scroll', () => {
-            const cardWidth = 245; // 220px width + 25px gap
-            const currentIndex = Math.round(awardsContainer.scrollLeft / cardWidth) + 1;
-            currentAwardSpan.textContent = Math.min(currentIndex, awardData.length);
-        });
+function stopAutoScroll() {
+    if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = null;
+    }
+}
 
-        // Auto scroll functionality
-        function toggleAutoScroll() {
-            if (autoScrollToggle.checked) {
-                startAutoScroll();
-            } else {
-                stopAutoScroll();
-            }
-        }
+// Modal functionality
+function openAwardModal(index) {
+    const modal = document.getElementById('awardModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
 
-        function startAutoScroll() {
-            autoScrollInterval = setInterval(() => {
-                const maxScroll = awardsContainer.scrollWidth - awardsContainer.clientWidth;
-                if (awardsContainer.scrollLeft >= maxScroll) {
-                    awardsContainer.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    awardsContainer.scrollBy({ left: 250, behavior: 'smooth' });
-                }
-            }, 3000);
-        }
+    const card = document.querySelectorAll('.award-card')[index];
+    const imgSrc = card.querySelector('img').src;
 
-        function stopAutoScroll() {
-            if (autoScrollInterval) {
-                clearInterval(autoScrollInterval);
-                autoScrollInterval = null;
-            }
-        }
+    modalImage.src = imgSrc;
+    modalTitle.textContent = awardData[index].title;
+    modalDescription.textContent = awardData[index].description;
 
-        // Modal functionality
-        function openAwardModal(index) {
-            const modal = document.getElementById('awardModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
-            
-            const card = document.querySelectorAll('.award-card')[index];
-            const imgSrc = card.querySelector('img').src;
-            
-            modalImage.src = imgSrc;
-            modalTitle.textContent = awardData[index].title;
-            modalDescription.textContent = awardData[index].description;
-            
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
 
-        function closeAwardModal() {
-            const modal = document.getElementById('awardModal');
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
+function closeAwardModal() {
+    const modal = document.getElementById('awardModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+}
 
-        function closeModalOnClick(event) {
-            if (event.target.id === 'awardModal') {
-                closeAwardModal();
-            }
-        }
+function closeModalOnClick(event) {
+    if (event.target.id === 'awardModal') {
+        closeAwardModal();
+    }
+}
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeAwardModal();
-            }
-        });
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeAwardModal();
+    }
+});
 
-        // Theme toggle
-        function toggleTheme() {
-            document.body.classList.toggle('dark');
-            const isDark = document.body.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        }
+// Theme toggle
+function toggleTheme() {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
 
-        // Load theme
-        function loadTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark');
-            }
-        }
+// Load theme
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+    }
+}
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                scrollAwards('left');
-            } else if (e.key === 'ArrowRight') {
-                scrollAwards('right');
-            }
-        });
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        scrollAwards('left');
+    } else if (e.key === 'ArrowRight') {
+        scrollAwards('right');
+    }
+});
 
-        // Initialize
-        loadTheme();
+// Initialize
+loadTheme();
 
-        // Stop auto-scroll when user manually scrolls
-        awardsContainer.addEventListener('wheel', () => {
-            if (autoScrollToggle.checked) {
-                autoScrollToggle.checked = false;
-                stopAutoScroll();
-            }
-        });
+// Stop auto-scroll when user manually scrolls
+awardsContainer.addEventListener('wheel', () => {
+    if (autoScrollToggle.checked) {
+        autoScrollToggle.checked = false;
+        stopAutoScroll();
+    }
+});
 
 
 
@@ -437,16 +435,16 @@ const awardsContainer = document.getElementById('awardsContainer');
 
 
 
-        // images section
+// images section
 
-        const photoItems = document.querySelectorAll('.photo-item');
+const photoItems = document.querySelectorAll('.photo-item');
 const fullscreenModal = document.getElementById('fullscreenModal');
 const fullscreenImg = document.getElementById('fullscreenImg');
 const closeFullscreen = document.getElementById('closeFullscreen');
 
 // Add click event to each photo item
 photoItems.forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
         const imgSrc = this.getAttribute('data-img');
         fullscreenImg.src = imgSrc;
         fullscreenModal.style.display = 'flex';
@@ -454,12 +452,12 @@ photoItems.forEach(item => {
 });
 
 // Close modal when clicking the close button
-closeFullscreen.addEventListener('click', function() {
+closeFullscreen.addEventListener('click', function () {
     fullscreenModal.style.display = 'none';
 });
 
 // Close modal when clicking outside the image
-fullscreenModal.addEventListener('click', function(e) {
+fullscreenModal.addEventListener('click', function (e) {
     if (e.target === fullscreenModal) {
         fullscreenModal.style.display = 'none';
     }
@@ -467,62 +465,86 @@ fullscreenModal.addEventListener('click', function(e) {
 
 
 document.querySelector('.contact-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  alert("Thank you! Your message has been sent successfully.");
-  this.reset();
+    e.preventDefault();
+    alert("Thank you! Your message has been sent successfully.");
+    this.reset();
 });
- function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.getElementById('themeIcon');
-            
-            body.classList.toggle('dark-theme');
-            
-            if (body.classList.contains('dark-theme')) {
-                themeIcon.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                themeIcon.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            }
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('themeIcon');
+
+    body.classList.toggle('dark-theme');
+
+    if (body.classList.contains('dark-theme')) {
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    const themeIcon = document.getElementById('themeIcon');
+
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeIcon.textContent = '☀️';
+    }
+});
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
+    });
+}, observerOptions);
 
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            const themeIcon = document.getElementById('themeIcon');
-            
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-theme');
-                themeIcon.textContent = '☀️';
-            }
-        });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.venture-card-box').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
-        });
+document.querySelectorAll('.venture-card-box').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(card);
+});
 
 
-        function copyLink() {
-  navigator.clipboard.writeText(window.location.href)
-    .then(() => alert('Page link copied to clipboard!'))
-    .catch(() => alert('Failed to copy link.'));
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href)
+        .then(() => alert('Page link copied to clipboard!'))
+        .catch(() => alert('Failed to copy link.'));
 }
 
 
 
+
+
+
+function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    let name = document.querySelector('input[name="name"]').value;
+    let email = document.querySelector('input[name="email"]').value;
+    let subject = document.querySelector('input[name="subject"]').value;
+    let message = document.querySelector('textarea[name="message"]').value;
+
+    let whatsappNumber = "918309881421"; // Your WhatsApp number
+
+    let whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" +
+        "New Contact Form Submission:%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Email: " + email + "%0A" +
+        "Subject: " + subject + "%0A" +
+        "Message: " + message;
+
+    window.open(whatsappURL, "_blank");
+}
