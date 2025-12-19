@@ -60,25 +60,32 @@ const episodes = {
         description: 'The Real Challenges of Building in Two Countries.',
         videoUrl: 'https://www.youtube.com/embed/hH07GIoHx1c?autoplay=1'
     },
-
-4: {
-    title: 'Episode 4',
-    description: 'Global vision - Building connections and fostering growth across borders.',
-    videoUrl: 'https://www.youtube.com/embed/mDZLApzjxsI?autoplay=1'
-},
-
+    4: {
+        title: 'Episode 6',
+        description: 'How My First Venture Shaped Everything: The @cityonetoursae Story',
+        videoUrl: 'https://www.youtube.com/embed/YJB4HaoZ7j8?autoplay=1'
+    },
     5: {
+        title: 'Episode 7',
+        description: 'Brewing Beyond Borders: The Yuti Breweries Story | Building a Ugandan Brand for Africa',
+        videoUrl: 'https://www.youtube.com/embed/aQKOlQg9z0o?autoplay=1'
+    },
+        6: {
+        title: 'Episode 8',
+        description: 'Why We Built Emiboozi by K | A New Chapter in Uganda’s Hospitality Scene',
+        videoUrl: 'https://www.youtube.com/embed/NXvv7vpJU4Q?autoplay=1'
+    },
+    7: {
+        title: 'Episode 4',
+        description: 'Global vision - Building connections and fostering growth across borders.',
+        videoUrl: 'https://www.youtube.com/embed/mDZLApzjxsI?autoplay=1'
+    },
+
+    8: {
         title: 'Episode 5',
         description: 'The teaser to my new series.',
         videoUrl: 'https://www.youtube.com/embed/MiehvcqbFRo?autoplay=1'
     },
-6: {
-    title: 'Episode 6',
-    description: 'Global vision - Building connections and fostering growth across borders.',
-    videoUrl: 'https://www.youtube.com/embed/SPA0fJpwTVw?autoplay=1'
-},
-
-
 };
 
 function openVideo(episodeNum) {
