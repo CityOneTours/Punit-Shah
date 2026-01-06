@@ -46,7 +46,7 @@
     <meta property="og:url" content="https://www.thepunitshah.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://www.thepunitshah.com/images/MD%20logo%20%20copy.png">
-<meta name="msvalidate.01" content="D13FDD3E89BA69DC6FAE90C2A7E53284" />
+    <meta name="msvalidate.01" content="D13FDD3E89BA69DC6FAE90C2A7E53284" />
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/FAv icon.png">
     <link rel="apple-touch-icon" href="images/FAv icon.png">
@@ -941,28 +941,44 @@
         </div>
 
         <div class="contact-container single">
-            <form class="contact-form" onsubmit="sendToWhatsApp(event)">
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
                 <p>Let’s collaborate to build something impactful.</p>
 
+                <!-- Web3Forms Access Key -->
+<input type="hidden" name="access_key" value="51ef18d3-72b2-4ef1-86be-31699eabb59d">
+                <!-- Name -->
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required />
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email" required />
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Subject" required />
-                </div>
-                <div class="form-group full-width">
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <input type="text" name="name" placeholder="Your Name" required>
                 </div>
 
+                <!-- Email -->
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <!-- Mobile Number -->
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Your Mobile Number" required>
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group">
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group full-width">
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+
+                <!-- Submit -->
                 <div class="btn-center">
                     <button type="submit" class="send-btn">
                         <i class="fa-solid fa-paper-plane"></i> Send Message
                     </button>
                 </div>
 
+                <!-- Alternate Contact -->
                 <div class="alternate-contact">
                     <h3>Alternate Contact</h3>
                     <p>📧 hello@thepunitshah.com</p>
@@ -970,13 +986,14 @@
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/thepunitshah/" target="_blank">LinkedIn</a>
                         <a href="https://www.instagram.com/thepunitshah/" target="_blank">Instagram</a>
-                        <a href="https://www.threads.com/@thepunitshah?xmt=AQF0kWw5NU1JwaMAKRWiHgprzVzpNquw_GiV5jEyWKKZG3k"
-                            target="_blank">X (Twitter)</a>
+                        <a href="https://www.threads.com/@thepunitshah" target="_blank">X (Twitter)</a>
                         <a href="https://www.youtube.com/@thepunitshah" target="_blank">YouTube</a>
                     </div>
                 </div>
+
             </form>
         </div>
+
     </section>
 
 
