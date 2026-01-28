@@ -78,13 +78,37 @@ const episodes = {
     7: {
         title: 'Episode 4',
         description: 'Global vision - Building connections and fostering growth across borders.',
-        videoUrl: 'https://www.youtube.com/embed/mDZLApzjxsI?autoplay=1'
+        videoUrl: 'https://www.youtube.com/embed/LEipUQnXgLk?autoplay=1'
     },
 
     8: {
         title: 'Episode 5',
-        description: 'The teaser to my new series.',
-        videoUrl: 'https://www.youtube.com/embed/MiehvcqbFRo?autoplay=1'
+        description: 'An early mistake that taught me lifelong lessons.',
+        videoUrl: 'https://www.youtube.com/embed/7josPQg7hU8?autoplay=1'
+    },
+    
+    9: {
+        title: 'Episode ',
+        description: 'The Fastest Way to Go Broke in Business (Most Founders Ignore This).',
+        videoUrl: 'https://www.youtube.com/embed/N1O-g39RvDw?autoplay=1'
+    },
+
+    10: {
+        title: 'Episode ',
+        description: 'An early mistake that taught me lifelong lessons.',
+        videoUrl: 'https://www.youtube.com/embed/7josPQg7hU8?autoplay=1'
+    },
+
+        11: {
+        title: 'Episode ',
+        description: 'Execution Beats Timing (This Lesson Cost Me Real Money).',
+        videoUrl: 'https://www.youtube.com/embed/a3Mq8R86opI?autoplay=1'
+    },
+
+    12: {
+        title: 'Episode ',
+        description: '3 Things I Wish I Knew Before Starting a Business',
+        videoUrl: 'https://www.youtube.com/embed/O9VhfGcb-mU?autoplay=1'
     },
 };
 
