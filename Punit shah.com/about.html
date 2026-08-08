@@ -1,649 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banoth — Design, Film, Code &amp; Grow | Freelance Creative Studio</title>
-<meta name="description" content="Freelance creative studio offering graphic design, video editing, social media management, web development and SEO — one connected signal across every screen.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --void:#08080f;
-  --ink:#12121d;
-  --ink-2:#191927;
-  --frost:#f4f2ff;
-  --mist:#8d8aa6;
-  --line:rgba(244,242,255,0.09);
-  --pulse:#4ce0d2;
-  --pulse-dim:rgba(76,224,210,0.14);
-  --flare:#ff4d6a;
-  --flare-dim:rgba(255,77,106,0.14);
-  --ff-display:'Bricolage Grotesque', sans-serif;
-  --ff-body:'Inter', sans-serif;
-  --ff-mono:'JetBrains Mono', monospace;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--void);
-  color:var(--frost);
-  font-family:var(--ff-body);
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto;}
-  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
-}
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;display:block;}
-::selection{background:var(--pulse);color:var(--void);}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/FAv icon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/FAv icon.png">
+  <meta name="msvalidate.01" content="  " />
+  <meta name="msvalidate.01" content="D13FDD3E89BA69DC6FAE90C2A7E53284" />
+  <meta name="msvalidate.01" content="D13FDD3E89BA69DC6FAE90C2A7E53284" />
 
-/* ---------- Layout helpers ---------- */
-.wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
-.eyebrow{
-  font-family:var(--ff-mono);
-  font-size:12px;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:var(--pulse);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:18px;
-}
-.eyebrow::before{content:"";width:22px;height:1px;background:var(--pulse);}
-h1,h2,h3{font-family:var(--ff-display);font-weight:700;letter-spacing:-0.02em;}
-.section{padding:120px 0;position:relative;}
-@media(max-width:768px){.section{padding:80px 0;} .wrap{padding:0 20px;}}
-
-/* ---------- Nav ---------- */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:22px 0;
-  transition:background .4s ease, border-color .4s ease, padding .4s ease;
-  border-bottom:1px solid transparent;
-}
-.nav.scrolled{
-  background:rgba(8,8,15,0.78);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
-  padding:14px 0;
-}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 32px;}
-.brand{font-family:var(--ff-display);font-weight:800;font-size:20px;letter-spacing:-0.01em;display:flex;align-items:center;gap:9px;}
-.brand-dot{width:9px;height:9px;border-radius:50%;background:var(--pulse);box-shadow:0 0 14px var(--pulse);}
-.nav-links{display:flex;gap:36px;align-items:center;}
-.nav-links a{font-size:14px;font-weight:500;color:var(--mist);position:relative;padding:4px 0;transition:color .25s;}
-.nav-links a:hover, .nav-links a.active{color:var(--frost);}
-.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--pulse);}
-.nav-cta{
-  font-family:var(--ff-mono);font-size:12.5px;letter-spacing:.04em;
-  padding:10px 20px;border:1px solid var(--line);border-radius:100px;
-  transition:border-color .25s, background .25s;
-}
-.nav-cta:hover{border-color:var(--pulse);background:var(--pulse-dim);}
-.menu-btn{display:none;background:none;border:none;color:var(--frost);cursor:pointer;padding:6px;}
-@media(max-width:860px){
-  .nav-links{position:fixed;top:0;right:-100%;height:100vh;width:78%;max-width:320px;background:var(--ink);flex-direction:column;justify-content:center;gap:28px;transition:right .4s ease;border-left:1px solid var(--line);}
-  .nav-links.open{right:0;}
-  .menu-btn{display:block;z-index:110;}
-  .nav-cta{display:none;}
-}
-
-/* ---------- Hero ---------- */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  position:relative;
-  padding-top:110px;
-  padding-bottom:60px;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr 0.95fr;
-  gap:40px;
-  align-items:center;
-  max-width:1240px;margin:0 auto;padding:0 32px;
-  width:100%;
-}
-.hero h1{
-  font-size:clamp(40px,6vw,74px);
-  line-height:1.03;
-  margin-bottom:26px;
-}
-.hero h1 em{font-style:normal;color:var(--pulse);}
-.hero p.lead{
-  font-size:18px;line-height:1.6;color:var(--mist);max-width:480px;margin-bottom:38px;
-}
-.btn-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
-.btn{
-  font-family:var(--ff-mono);font-size:13px;letter-spacing:.04em;
-  padding:15px 26px;border-radius:100px;display:inline-flex;align-items:center;gap:8px;
-  transition:transform .25s, box-shadow .25s, background .25s;
-}
-.btn-primary{background:var(--pulse);color:var(--void);font-weight:600;}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -6px var(--pulse-dim);}
-.btn-ghost{border:1px solid var(--line);color:var(--frost);}
-.btn-ghost:hover{border-color:var(--frost);transform:translateY(-2px);}
-
-.hero-canvas-wrap{
-  position:relative;
-  height:520px;
-}
-#hero-canvas{width:100%;height:100%;display:block;cursor:grab;}
-.hero-canvas-wrap::after{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 50%, transparent 40%, var(--void) 82%);
-  pointer-events:none;
-}
-@media(max-width:980px){
-  .hero-grid{grid-template-columns:1fr;}
-  .hero-canvas-wrap{height:360px;order:-1;}
-}
-
-/* marquee */
-.marquee{
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:22px 0;overflow:hidden;white-space:nowrap;
-}
-.marquee-track{display:inline-flex;gap:60px;animation:scroll-x 26s linear infinite;}
-@keyframes scroll-x{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.marquee-item{
-  font-family:var(--ff-mono);font-size:14px;letter-spacing:.08em;color:var(--mist);
-  display:inline-flex;align-items:center;gap:60px;text-transform:uppercase;
-}
-.marquee-item span.dot{color:var(--flare);}
-
-/* ---------- Services ---------- */
-.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px;flex-wrap:wrap;}
-.section-head h2{font-size:clamp(30px,4vw,46px);max-width:600px;}
-.section-head p{color:var(--mist);max-width:340px;font-size:15px;line-height:1.6;}
-
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-@media(max-width:980px){.services-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:640px){.services-grid{grid-template-columns:1fr;}}
-
-.card-3d{perspective:1000px;}
-.service-card{
-  background:linear-gradient(160deg, var(--ink) 0%, var(--ink-2) 100%);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:34px 28px;
-  height:100%;
-  transform-style:preserve-3d;
-  transition:transform .12s ease-out, border-color .3s ease, box-shadow .3s ease;
-  position:relative;
-  overflow:hidden;
-}
-.service-card::before{
-  content:"";position:absolute;top:-40%;right:-30%;width:220px;height:220px;border-radius:50%;
-  background:radial-gradient(circle, var(--pulse-dim), transparent 70%);
-  opacity:0;transition:opacity .35s;
-}
-.service-card:hover{border-color:rgba(76,224,210,0.35);box-shadow:0 20px 50px -20px rgba(0,0,0,0.6);}
-.service-card:hover::before{opacity:1;}
-.service-icon{
-  width:46px;height:46px;border-radius:12px;
-  background:var(--pulse-dim);color:var(--pulse);
-  display:flex;align-items:center;justify-content:center;margin-bottom:24px;
-  transform:translateZ(30px);
-}
-.service-card:nth-child(2) .service-icon, .service-card:nth-child(5) .service-icon{background:var(--flare-dim);color:var(--flare);}
-.service-card h3{font-size:20px;margin-bottom:10px;transform:translateZ(20px);}
-.service-card p{color:var(--mist);font-size:14.5px;line-height:1.6;transform:translateZ(15px);}
-.service-tag{
-  font-family:var(--ff-mono);font-size:11px;color:var(--mist);
-  position:absolute;top:28px;right:28px;letter-spacing:.05em;
-}
-
-/* ---------- Work preview ---------- */
-.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-@media(max-width:980px){.work-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:640px){.work-grid{grid-template-columns:1fr;}}
-.work-card{
-  border-radius:20px;overflow:hidden;position:relative;border:1px solid var(--line);
-  aspect-ratio:4/5;transform-style:preserve-3d;transition:transform .12s ease-out;
-}
-.work-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
-.work-card:hover img{transform:scale(1.08);}
-.work-card-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(0deg, rgba(8,8,15,0.92) 0%, rgba(8,8,15,0.25) 55%, transparent 100%);
-  display:flex;flex-direction:column;justify-content:flex-end;padding:26px;
-}
-.work-card-tag{font-family:var(--ff-mono);font-size:11px;color:var(--pulse);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;}
-.work-card h3{font-size:21px;}
-.view-all-row{display:flex;justify-content:center;margin-top:50px;}
-
-/* ---------- Process ---------- */
-.process-list{border-top:1px solid var(--line);}
-.process-row{
-  display:grid;grid-template-columns:90px 1fr 1fr;gap:24px;align-items:center;
-  padding:34px 0;border-bottom:1px solid var(--line);
-}
-.process-num{font-family:var(--ff-mono);font-size:14px;color:var(--flare);}
-.process-row h3{font-size:24px;}
-.process-row p{color:var(--mist);font-size:14.5px;line-height:1.6;}
-@media(max-width:768px){.process-row{grid-template-columns:1fr;gap:8px;}}
-
-/* ---------- Tools strip ---------- */
-.tools-strip{display:flex;flex-wrap:wrap;gap:14px;}
-.tool-badge{
-  font-family:var(--ff-mono);font-size:12.5px;color:var(--mist);
-  border:1px solid var(--line);padding:10px 18px;border-radius:100px;
-  transition:border-color .25s, color .25s;
-}
-.tool-badge:hover{border-color:var(--pulse);color:var(--frost);}
-
-/* ---------- CTA band ---------- */
-.cta-band{
-  background:linear-gradient(135deg, var(--ink), var(--ink-2));
-  border:1px solid var(--line);border-radius:28px;
-  padding:70px 50px;text-align:center;position:relative;overflow:hidden;
-}
-.cta-band::before{
-  content:"";position:absolute;width:400px;height:400px;border-radius:50%;
-  background:radial-gradient(circle, var(--pulse-dim), transparent 70%);
-  top:-160px;left:-100px;
-}
-.cta-band::after{
-  content:"";position:absolute;width:400px;height:400px;border-radius:50%;
-  background:radial-gradient(circle, var(--flare-dim), transparent 70%);
-  bottom:-180px;right:-100px;
-}
-.cta-band h2{font-size:clamp(28px,4.5vw,48px);max-width:640px;margin:0 auto 22px;position:relative;}
-.cta-band p{color:var(--mist);max-width:480px;margin:0 auto 34px;position:relative;}
-.cta-band .btn-row{justify-content:center;margin-bottom:0;position:relative;}
-
-/* ---------- Footer ---------- */
-footer{border-top:1px solid var(--line);padding:60px 0 30px;}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px;}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;}}
-.footer-col h4{font-family:var(--ff-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);margin-bottom:18px;}
-.footer-col a{display:block;font-size:14.5px;color:var(--frost);margin-bottom:12px;opacity:.85;transition:opacity .2s;}
-.footer-col a:hover{opacity:1;color:var(--pulse);}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;border-top:1px solid var(--line);flex-wrap:wrap;gap:12px;}
-.footer-bottom p{font-size:13px;color:var(--mist);}
-
-/* reveal on scroll */
-.reveal{opacity:0;transform:translateY(36px) rotateX(6deg);transition:opacity .8s cubic-bezier(.16,.8,.3,1), transform .8s cubic-bezier(.16,.8,.3,1);}
-.reveal.visible{opacity:1;transform:translateY(0) rotateX(0);}
-</style>
 </head>
+
 <body>
-
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand"><span class="brand-dot"></span>BANOTH.</a>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="work.html">Work</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="nav-cta" style="display:inline-block;">Start a project →</a>
-    </div>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="eyebrow">MULTI-DISCIPLINARY FREELANCE STUDIO · HYDERABAD</div>
-      <h1>Ideas,<br><em>broadcast</em><br>beautifully.</h1>
-      <p class="lead">I design, film, build and grow brands — one connected signal across every screen. Graphic design, video, social, web development and SEO, handled end to end.</p>
-      <div class="btn-row">
-        <a href="work.html" class="btn btn-primary">See the work →</a>
-        <a href="contact.html" class="btn btn-ghost">Start a project</a>
+  <!-- Navbar -->
+  <header class="navbar">
+    <article class="nav-bar">
+      <div class="logo">
+        <a href="../Punit shah.com/index.html">
+          <a href="index.html">
+            <img src="images/MD logo  copy.png" alt="PS Logo" />
+          </a>
       </div>
-    </div>
-    <div class="hero-canvas-wrap">
-      <canvas id="hero-canvas"></canvas>
-    </div>
-  </div>
-</header>
 
-<div class="marquee">
-  <div class="marquee-track">
-    <div class="marquee-item">GRAPHIC DESIGN <span class="dot">●</span> VIDEO EDITING <span class="dot">●</span> SOCIAL MEDIA MANAGEMENT <span class="dot">●</span> WEB DEVELOPMENT <span class="dot">●</span> SEO &amp; DIGITAL MARKETING <span class="dot">●</span></div>
-    <div class="marquee-item">GRAPHIC DESIGN <span class="dot">●</span> VIDEO EDITING <span class="dot">●</span> SOCIAL MEDIA MANAGEMENT <span class="dot">●</span> WEB DEVELOPMENT <span class="dot">●</span> SEO &amp; DIGITAL MARKETING <span class="dot">●</span></div>
-  </div>
-</div>
+      <!-- Mobile Menu Button -->
+      <button class="menu-btn" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-<!-- SERVICES -->
-<section class="section" id="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>What I bring to<br>the signal.</h2>
-      <p>Five crafts, one studio. Hire one, or hand over the whole project and I'll run it end to end.</p>
-    </div>
-    <div class="services-grid">
+      <nav id="navLinks">
+        <ul>
+          <li><a href="about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+          <li><a href="index.html#Ventures"><i class="fa-solid fa-briefcase"></i> Ventures</a></li>
+          <li><a href="index.html#Series"><i class="fa-solid fa-clapperboard"></i> Series</a></li>
+          <li><a href="index.html#Insights"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+          <li><a href="index.html#bio"><i class="fa-solid fa-fire"></i> Passions</a></li>
 
-      <div class="card-3d reveal"><div class="service-card tilt">
-        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="9" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="15" r="1.2" fill="currentColor" stroke="none"/><path d="M12 3a9 9 0 000 18c1.4 0 2-1 1.3-2.1-.5-.8.1-1.9 1.1-1.9H16a5 5 0 000-10"/></svg></div>
-        <div class="service-tag">01</div>
-        <h3>Graphic Design</h3>
-        <p>Brand identity, logos, social creatives, print and packaging — visuals with a clear point of view.</p>
-      </div></div>
+          <li><a href="index.html#Duo"><i class="fa-solid fa-photo-video"></i> Media</a></li>
+          <li><a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
 
-      <div class="card-3d reveal"><div class="service-card tilt">
-        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg></div>
-        <div class="service-tag">02</div>
-        <h3>Video Editing</h3>
-        <p>Reels, ads, brand films and long-form edits — paced, color-graded and built for the platform.</p>
-      </div></div>
+          <li>
+            <button class="mode-btn" id="themeToggle">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </header>
 
-      <div class="card-3d reveal"><div class="service-card tilt">
-        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="5" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M7.1 10.8L15.9 7M7.1 13.2L15.9 17"/></svg></div>
-        <div class="service-tag">03</div>
-        <h3>Social Media</h3>
-        <p>Content calendars, captions, posting and community management across Instagram, Meta and LinkedIn.</p>
-      </div></div>
-
-      <div class="card-3d reveal"><div class="service-card tilt">
-        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 6L2 12l6 6M16 6l6 6-6 6M13 4l-2 16"/></svg></div>
-        <div class="service-tag">04</div>
-        <h3>Web Development</h3>
-        <p>Full multi-page websites — responsive, fast, and built to match a brand's design system exactly.</p>
-      </div></div>
-
-      <div class="card-3d reveal"><div class="service-card tilt">
-        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg></div>
-        <div class="service-tag">05</div>
-        <h3>SEO &amp; Marketing</h3>
-        <p>On-page SEO, keyword strategy and campaign support that gets the work you make actually found.</p>
-      </div></div>
-
-      <div class="card-3d reveal"><div class="service-card tilt" style="display:flex;flex-direction:column;justify-content:space-between;">
-        <div>
-          <div class="service-icon" style="background:transparent;border:1px solid var(--line);color:var(--frost);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <h3>Full-Service Studio</h3>
-          <p>Need it all working together? I plan, design, build and run the campaign as one connected project.</p>
+  <main class="main-container">
+    <div class="hero-grid">
+      <aside class="image-section">
+        <div class="profile-frame">
+          <img src="images/Punit 3.JPG" alt="Punit Shah" class="profile-image" />
         </div>
-        <a href="contact.html" style="font-family:var(--ff-mono);font-size:13px;color:var(--pulse);margin-top:20px;">Let's talk →</a>
-      </div></div>
+      </aside>
 
-    </div>
-  </div>
-</section>
+      <article class="content-section">
+        <span class="section-label">My Journey</span>
+        <h1 class="main-heading">From a Single Idea to a Legacy of Impact</h1>
+        <p class="intro-text">
+          My entrepreneurial journey has been a continuous process of learning and evolution, driven by a
+          deep-seated belief in service and authenticity. It all started in the UAE with City One Tourism and
+          Travel, a venture born from a passion for connecting people and cultures through carefully crafted
+          travel experiences. That initial venture set the standard for everything that came after, building a
+          foundation on which I could expand my vision.
+        </p>
+        <p class="intro-text">
+          The path eventually led me from the dynamic landscape of the UAE to the rich potential of Uganda.
+          This transition was more than a geographical move; it was an expansion of my purpose. I saw an
+          opportunity to build businesses that not only succeed but also create meaningful, sustainable
+          impact. Each new venture became a chapter in a larger story of bridging continents, empowering
+          communities, and turning ambitious ideas into reality.
+        </p>
 
-<!-- FEATURED WORK -->
-<section class="section" id="work" style="background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>Selected<br>transmissions.</h2>
-      <p>A sample of recent design, video and web projects. Swap these for your own case studies.</p>
-    </div>
-    <div class="work-grid">
-
-      <div class="work-card tilt reveal">
-        <img src="https://images.pexels.com/photos/33572895/pexels-photo-33572895.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Real estate website project on dual monitors" loading="lazy">
-        <div class="work-card-overlay">
-          <div class="work-card-tag">Web Development</div>
-          <h3>Megha Realty — Site Rebuild</h3>
+        <div class="ventures-container">
+          <div class="venture-item">
+            <h3 class="venture-title">City One Tourism and Travel</h3>
+            <p class="venture-description">We started by creating exceptional travel experiences that
+              connect cultures. Our focus has always been on providing authentic service and building
+              lasting memories for travelers from around the world.
+            </p>
+          </div>
+          <div class="venture-item">
+            <h3 class="venture-title">K Hotels</h3>
+            <p class="venture-description">A landmark of Ugandan hospitality, K Hotels rose from its initial
+              construction to become recognized by TripAdvisor as one of the top hotels in Africa. It
+              embodies our commitment to blending luxury with local warmth and excellence.</p>
+          </div>
+          <div class="venture-item">
+            <h3 class="venture-title">Yuti Breweriies</h3>
+            <p class="venture-description"> As a pioneer in Uganda’s mass-market beer and liquor industry,
+              we built a brand that resonates nationwide. Inaugurated by H.E. the President, Yuti focuses
+              on quality, affordability, and local employment.
+            </p>
+          </div>
+          <div class="venture-item">
+            <h3 class="venture-title">Emiboozi</h3>
+            <p class="venture-description"> Meaning “conversations” in Luganda, Emiboozi is a restaurant
+              concept that is redefining the Ugandan dining scene. It’s a space where culture, community,
+              and cuisine come together to create a unique lifestyle brand.
+            </p>
+          </div>
+          <div class="venture-item">
+            <h3 class="venture-title">Lumilife</h3>
+            <p class="venture-description">Specializing in innovative lighting and automation solutions,
+              Lumilife brings quality and convenience to spaces ranging from homes to large commercial
+              properties, setting new standards in the industry.
+            </p>
+          </div>
+          <div class="venture-item">
+            <h3 class="venture-title">Rudra Agro</h3>
+            <p class="venture-description">Focused on the future of agriculture, Rudra Agro trades in cocoa
+              and coffee while strategically acquiring land for cultivation. Our work is driven by fair
+              trade practices and a commitment to impact-driven growth.
+            </p>
+          </div>
+          <div class="venture-item">
+            <h3 class="venture-title">ByKurators</h3>
+            <p class="venture-description">
+              ByKurators is a premium lifestyle and luxury retail brand that curates
+              fashion, beauty, and home essentials. Committed to quality, elegance,
+              and innovation, it offers thoughtfully selected collections that inspire
+              modern living and exceptional shopping experiences.
+            </p>
+          </div>
+          <!-- <h3 class="venture-title">ByKurators</h3>
+          <p class="venture-description">
+            ByKurators is a premium lifestyle and luxury retail brand that curates
+            fashion, beauty, and home essentials. Committed to quality, elegance,
+            and innovation, it offers thoughtfully selected collections that inspire
+            modern living and exceptional shopping experiences.
+          </p> -->
         </div>
-      </div>
+    </div>
+    </article>
+    </div>
+    <div class="social-sidebar-right">
 
-      <div class="work-card tilt reveal">
-        <img src="https://images.pexels.com/photos/4348366/pexels-photo-4348366.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Brand identity design workspace" loading="lazy">
-        <div class="work-card-overlay">
-          <div class="work-card-tag">Graphic Design</div>
-          <h3>Vijay Caterers — Brand Refresh</h3>
+
+      <a href="https://www.instagram.com/thepunitshah/" target="_blank" class="social-icon instagram"
+        aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.threads.com/@thepunitshah?xmt=AQF0kWw5NU1JwaMAKRWiHgprzVzpNquw_GiV5jEyWKKZG3k"
+        target="_blank" class="social-icon twitter" aria-label="X">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/thepunitshah/" target="_blank" class="social-icon linkedin"
+        aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <!-- <a href="connect@punitshah.com" class="social-icon mail" aria-label="Mail">
+            <i class="fas fa-envelope"></i>
+        </a> -->
+      <a href="https://www.youtube.com/@thepunitshah" target="_blank" class="social-icon youtube" aria-label="YouTube">
+        <a href="https://www.youtube.com/@thepunitshah" target="_blank" class="social-icon youtube"
+          aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+    <section class="philosophy-block">
+      <span class="section-label">Philosophy</span>
+      <h2 class="philosophy-heading">Building Ecosystems, Not Just Companies</h2>
+      <p class="philosophy-text">
+        I believe true entrepreneurship extends beyond building individual companies; it's about creating
+        interconnected ecosystems where people, opportunities, and purpose can thrive. My philosophy is grounded
+        in three core principles: perseverance, collaboration, and a relentless commitment to excellence.
+        Success is not just about what I build, but about what I enable others to achieve.
+      </p>
+
+      <div class="quote-container">
+        <p class="quote-content">
+          "Success isn't just what you build. It's what you enable others to build through you."
+        </p>
+        <p class="quote-attribution">— Punit Shah</p>
+      </div>
+    </section>
+
+    <section class="vision-block">
+      <span class="section-label">My Roots & Vision</span>
+      <h2 class="philosophy-heading"> A Global Mindset with Local Impact</h2>
+      <p class="vision-text">
+        My story is woven between two vibrant cultures: the boundless ambition of the UAE and the fertile,
+        untapped potential of Uganda. This unique blend has shaped my vision to create businesses that operate
+        with a global mindset while delivering a powerful local impact. My goal is to continue building bridges
+        between these two worlds, creating enterprises that transcend borders and foster shared prosperity and
+        growth for years to come.
+      </p>
+
+      <!-- <div class="bio-downloads">
+                <a href="#" class="download-btn download-primary">
+                    <span>📄</span>
+                    Short Bio (for Media)
+                </a>
+                <a href="#" class="download-btn download-secondary">
+                    <span>📋</span>
+                    Full Biography
+                </a>
+            </div> -->
+    </section>
+  </main>
+  <!-- <footer class="ps-footer-bg">
+        <div class="ps-footer-wrap">
+            <div class="ps-photo-area">
+                <img src="images/Final-hero image (1) (1) 111.png" alt="Punit Shah" class="ps-profile-pic" />
+            </div>
+
+            <div class="ps-details-area">
+                <h2 class="ps-name">PUNIT SHAH</h2>
+                <p class="ps-role">ENTREPRENEUR</p>
+                <ul class="ps-contact-list">
+                    <li><i class="fas fa-phone-alt"></i> +971 55 369 1913</li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:hello@thepunitshah.com">hello@thepunitshah.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <a href="https://www.thepunitshah.com" target="_blank">www.thepunitshah.com</a>
+                    </li>
+                </ul>
+
+                <div class="ps-social-icons">
+                    <a href="https://www.threads.com/@thepunitshah?xmt=AQF0kWw5NU1JwaMAKRWiHgprzVzpNquw_GiV5jEyWKKZG3k"
+                        target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/thepunitshah/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/thepunitshah/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/971553691913" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.youtube.com/channel/UCsYm7eZqx9LLJkE5T04s1hQ" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="ps-logo-area">
+                <div class="ps-logo">
+                    <img src="images/MD logo  copy.png" alt="Company Logo" class="footer-logo" />
+                </div>
+
+                <div class="ps-company-logos">
+                    <a href="https://www.cityonetours.com/" target="_blank" class="size">
+                        <img src="images/cityone figma.png" alt="City One Property" />
+                    </a>
+
+                    <a href="https://khotels.ug/" target="_blank" class="size">
+                        <img src="images/k hotels figma.png" alt="K Hotel" />
+                    </a>
+
+                    <a href="http://emiboozibyk.com" target="_blank" class="size">
+                        <img src="logos/emiboozi figma.png" alt="Emiboozi" />
+                    </a>
+                    <a href="http://lumilife.ae" target="_blank" class="size">
+                        <img src="images/FreeSample-Vectorizer-io-Lumilife logo 1.png" alt="Lumilife" />
+                    </a>
+                    <a href="https://www.rudraagro.com" target="_blank">
+                        <img src="logos/Rudra agro copy 2.png" alt="Rudra Agro" />
+                    </a>
+                    <a href="https://www.whiterose.com" target="_blank" class="size">
+                        <img src="logos/Whiterose figma.png" alt="White Rose" />
+                    </a>
+                    <a href="https://www.ybl.ug/" target="_blank" class="size">
+                        <img src="logos/ybl logo figma.png" alt="YBL" />
+                    </a>
+                </div>
+            </div>
         </div>
+    </footer> -->
+
+  <footer class="footer">
+    <div class="footer-blur-overlay"></div>
+
+    <div class="footer-container">
+      <div class="footer-about">
+        <img src="images/MD logo  copy.png" alt="Punit Shah Logo" class="footer-logo">
+        <p>
+          Rooted in UAE, Building Across Uganda — creating ecosystems of opportunity and growth through
+          perseverance, collaboration, and impact-driven entrepreneurship.
+        </p>
       </div>
 
-      <div class="work-card tilt reveal">
-        <img src="https://images.pexels.com/photos/8100060/pexels-photo-8100060.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Video editing color grading" loading="lazy">
-        <div class="work-card-overlay">
-          <div class="work-card-tag">Video Editing</div>
-          <h3>Goa Package — Promo Reel</h3>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#Ventures">Ventures</a></li>
+          <li><a href="#Insights">Insights</a></li>
+          <li><a href="#Series">Series</a></li>
+          <li><a href="#bio">Passions</a></li>
+          <li><a href="#Duo">Media</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h3>Connect With Me</h3>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/thepunitshah/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/thepunitshah/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.threads.com/@thepunitshah?xmt=AQF0kWw5NU1JwaMAKRWiHgprzVzpNquw_GiV5jEyWKKZG3k"
+            title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@thepunitshah" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
+
       </div>
 
-    </div>
-    <div class="view-all-row reveal">
-      <a href="work.html" class="btn btn-ghost">View all projects →</a>
-    </div>
-  </div>
-</section>
 
-<!-- PROCESS -->
-<section class="section" id="process">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>How a project moves.</h2>
-      <p>The same five steps, whether it's a logo or a full website launch.</p>
     </div>
-    <div class="process-list reveal">
-      <div class="process-row">
-        <div class="process-num">01</div>
-        <h3>Discover</h3>
-        <p>A short call to understand your brand, audience and what "done" looks like.</p>
-      </div>
-      <div class="process-row">
-        <div class="process-num">02</div>
-        <h3>Design</h3>
-        <p>Concepts, drafts and a design system you approve before anything is built.</p>
-      </div>
-      <div class="process-row">
-        <div class="process-num">03</div>
-        <h3>Build / Produce</h3>
-        <p>Development, editing or production — with regular check-ins along the way.</p>
-      </div>
-      <div class="process-row">
-        <div class="process-num">04</div>
-        <h3>Launch</h3>
-        <p>Final polish, testing and a clean handover — site live, files delivered.</p>
-      </div>
-      <div class="process-row" style="border-bottom:none;">
-        <div class="process-num">05</div>
-        <h3>Grow</h3>
-        <p>Ongoing social, SEO or content support to keep the results compounding.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- TOOLS -->
-<section class="section" style="padding-top:0;">
-  <div class="wrap reveal">
-    <div class="eyebrow">TOOLS &amp; PLATFORMS</div>
-    <div class="tools-strip">
-      <span class="tool-badge">Photoshop</span>
-      <span class="tool-badge">Illustrator</span>
-      <span class="tool-badge">Figma</span>
-      <span class="tool-badge">Premiere Pro</span>
-      <span class="tool-badge">After Effects</span>
-      <span class="tool-badge">HTML / CSS / JS</span>
-      <span class="tool-badge">WordPress</span>
-      <span class="tool-badge">Meta Business Suite</span>
-      <span class="tool-badge">Google Search Console</span>
-      <span class="tool-badge">Canva</span>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section" style="padding-top:20px;">
-  <div class="wrap reveal">
-    <div class="cta-band">
-      <div class="eyebrow" style="justify-content:center;">AVAILABLE FOR NEW PROJECTS</div>
-      <h2>Got a brand that needs<br>a stronger signal?</h2>
-      <p>Tell me about the project — I'll reply with next steps and a realistic timeline.</p>
-      <div class="btn-row">
-        <a href="contact.html" class="btn btn-primary">Start a project →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="brand" style="margin-bottom:14px;"><span class="brand-dot"></span>BANOTH.</div>
-        <p style="color:var(--mist);font-size:14px;line-height:1.6;max-width:260px;">Freelance design, video, web and marketing studio based in Hyderabad, working with clients everywhere.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="work.html">Work</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
-        <a href="tel:+910000000000">+91 00000 00000</a>
-        <a href="#">Hyderabad, India</a>
-      </div>
-      <div class="footer-col">
-        <h4>Social</h4>
-        <a href="#" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">Behance</a>
-        <a href="#" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </div>
     <div class="footer-bottom">
-      <p>© 2026 Banoth. All rights reserved.</p>
-      <p style="font-family:var(--ff-mono);">Design + build by Banoth</p>
+      <p>© 2025 <span>Punit Shah</span>. All rights reserved.</p>
     </div>
-  </div>
-</footer>
+  </footer>
+  <script src="about.js"></script>
+  <script src="script.js"></script>
 
-<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-<script>
-/* ---------- Nav scroll + mobile menu ---------- */
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', ()=>{ nav.classList.toggle('scrolled', window.scrollY > 40); });
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
-menuBtn.addEventListener('click', ()=> navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>navLinks.classList.remove('open')));
-
-/* ---------- Scroll reveal ---------- */
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
-},{threshold:0.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* ---------- 3D tilt on cards ---------- */
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!reduceMotion){
-  document.querySelectorAll('.tilt').forEach(card=>{
-    card.addEventListener('mousemove', (e)=>{
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left)/r.width - 0.5;
-      const y = (e.clientY - r.top)/r.height - 0.5;
-      card.style.transform = `perspective(900px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateZ(0)`;
-    });
-    card.addEventListener('mouseleave', ()=>{ card.style.transform = 'perspective(900px) rotateY(0) rotateX(0)'; });
-  });
-}
-
-/* ---------- Hero 3D scene ---------- */
-(function(){
-  const canvas = document.getElementById('hero-canvas');
-  const wrap = canvas.parentElement;
-  if(!window.THREE) return;
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, wrap.clientWidth/wrap.clientHeight, 0.1, 100);
-  camera.position.set(0,0,7);
-
-  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  renderer.setSize(wrap.clientWidth, wrap.clientHeight);
-
-  const group = new THREE.Group();
-  scene.add(group);
-
-  // outer wireframe core
-  const coreGeo = new THREE.IcosahedronGeometry(1.9, 1);
-  const edges = new THREE.EdgesGeometry(coreGeo);
-  const coreMat = new THREE.LineBasicMaterial({color:0x4ce0d2, transparent:true, opacity:0.75});
-  const coreLines = new THREE.LineSegments(edges, coreMat);
-  group.add(coreLines);
-
-  // inner glowing solid
-  const innerGeo = new THREE.IcosahedronGeometry(1.05, 0);
-  const innerMat = new THREE.MeshBasicMaterial({color:0xff4d6a, wireframe:true, transparent:true, opacity:0.55});
-  const innerMesh = new THREE.Mesh(innerGeo, innerMat);
-  group.add(innerMesh);
-
-  // core point glow
-  const glowGeo = new THREE.SphereGeometry(0.35, 16, 16);
-  const glowMat = new THREE.MeshBasicMaterial({color:0xf4f2ff, transparent:true, opacity:0.9});
-  const glow = new THREE.Mesh(glowGeo, glowMat);
-  group.add(glow);
-
-  // orbiting nodes (5 skills)
-  const nodeColors = [0x4ce0d2, 0xff4d6a, 0x4ce0d2, 0xff4d6a, 0x4ce0d2];
-  const nodes = [];
-  const orbitGroup = new THREE.Group();
-  group.add(orbitGroup);
-  for(let i=0;i<5;i++){
-    const angle = (i/5)*Math.PI*2;
-    const radius = 3.1;
-    const nodeGeo = new THREE.SphereGeometry(0.09, 12, 12);
-    const nodeMat = new THREE.MeshBasicMaterial({color:nodeColors[i]});
-    const node = new THREE.Mesh(nodeGeo, nodeMat);
-    node.position.set(Math.cos(angle)*radius, Math.sin(angle*1.3)*0.9, Math.sin(angle)*radius);
-    node.userData = {angle, radius, speed: 0.15 + i*0.03, yOff: i};
-    orbitGroup.add(node);
-    nodes.push(node);
-  }
-
-  let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
-  wrap.addEventListener('mousemove', (e)=>{
-    const r = wrap.getBoundingClientRect();
-    mouseX = ((e.clientX - r.left)/r.width - 0.5) * 2;
-    mouseY = ((e.clientY - r.top)/r.height - 0.5) * 2;
-  });
-
-  function resize(){
-    const w = wrap.clientWidth, h = wrap.clientHeight;
-    camera.aspect = w/h;
-    camera.updateProjectionMatrix();
-    renderer.setSize(w,h);
-  }
-  window.addEventListener('resize', resize);
-
-  const clock = new THREE.Clock();
-  function animate(){
-    requestAnimationFrame(animate);
-    const t = clock.getElapsedTime();
-
-    targetX += (mouseX - targetX) * 0.04;
-    targetY += (mouseY - targetY) * 0.04;
-
-    group.rotation.y = t*0.18 + targetX*0.5;
-    group.rotation.x = targetY*0.35 + Math.sin(t*0.3)*0.05;
-    innerMesh.rotation.y -= 0.01;
-    innerMesh.rotation.x += 0.006;
-
-    nodes.forEach(n=>{
-      const a = n.userData.angle + t*n.userData.speed;
-      n.position.x = Math.cos(a)*n.userData.radius;
-      n.position.z = Math.sin(a)*n.userData.radius;
-      n.position.y = Math.sin(t*0.6 + n.userData.yOff)*0.7;
-    });
-
-    glow.scale.setScalar(1 + Math.sin(t*2)*0.08);
-
-    renderer.render(scene, camera);
-  }
-  animate();
-})();
-</script>
+  <!-- <script src="dark-light.js"></script> -->
 </body>
+
+
 </html>

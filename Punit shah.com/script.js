@@ -566,7 +566,7 @@ function sendToWhatsApp(event) {
     let subject = document.querySelector('input[name="subject"]').value;
     let message = document.querySelector('textarea[name="message"]').value;
 
-    let whatsappNumber = "918309881421"; // Your WhatsApp number
+    let whatsappNumber = "971553691913"; // Your WhatsApp number
 
     let whatsappURL =
         "https://wa.me/" + whatsappNumber +
