@@ -135,9 +135,9 @@
                 aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
             </a>
-            <!-- <a href="connect@punitshah.com" class="social-icon mail" aria-label="Mail">
+        <a href="mailto:hello@thepunitshah.com" class="social-icon mail" aria-label="Email Punit Shah" title="Email Punit Shah">
             <i class="fas fa-envelope"></i>
-        </a> -->
+        </a>
             <a href="https://www.youtube.com/@thepunitshah" target="_blank"
                 class="social-icon youtube" aria-label="YouTube">
                 <i class="fab fa-youtube"></i>
@@ -206,25 +206,37 @@
             </div>
         </article>
         <!-- Share Section -->
-        <!-- <div class="share-section">
+        <div class="share-section">
             <div class="share-label">
                 <i class="fa-solid fa-share"></i> Share this article
             </div>
             <div class="share-buttons">
-                <a href="#" class="share-btn facebook" title="Share on Facebook">
+                <a href="#" class="share-btn facebook" data-share="facebook"
+                    target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" class="share-btn twitter" title="Share on Twitter">
+
+                <a href="#" class="share-btn twitter" data-share="twitter"
+                    target="_blank" rel="noopener" aria-label="Share on X" title="Share on X">
                     <i class="fab fa-x-twitter"></i>
                 </a>
-                <a href="#" class="share-btn linkedin" title="Share on LinkedIn">
+
+                <a href="#" class="share-btn linkedin" data-share="linkedin"
+                    target="_blank" rel="noopener" aria-label="Share on LinkedIn" title="Share on LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#" class="share-btn whatsapp" title="Share on WhatsApp">
+
+                <a href="#" class="share-btn whatsapp" data-share="whatsapp"
+                    target="_blank" rel="noopener" aria-label="Share on WhatsApp" title="Share on WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
+
+                <a href="#" class="share-btn email" data-share="email"
+                    aria-label="Share by Email" title="Share by Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
-        </div> -->
+        </div>
 
         <!-- Related Articles -->
         <section class="related-section">
@@ -362,12 +374,12 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="#Ventures">Ventures</a></li>
-                    <li><a href="#Insights">Insights</a></li>
-                    <li><a href="#Series">Series</a></li>
-                    <li><a href="#bio">Passions</a></li>
-                    <li><a href="#Duo">Media</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html#Ventures">Ventures</a></li>
+                    <li><a href="index.html#Insights">Insights</a></li>
+                    <li><a href="index.html#Series">Series</a></li>
+                    <li><a href="index.html#bio">Passions</a></li>
+                    <li><a href="index.html#Duo">Media</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
 
@@ -392,6 +404,39 @@
     </footer>
     <script src="about.js"></script>
     <script src="script.js"></script>
- </body>
+ 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const pageUrl = encodeURIComponent(window.location.href);
+            const pageTitle = encodeURIComponent(document.title);
+
+            document.querySelectorAll("[data-share]").forEach(function (button) {
+                const network = button.dataset.share;
+
+                if (network === "facebook") {
+                    button.href = "https://www.facebook.com/sharer/sharer.php?u=" + pageUrl;
+                }
+
+                if (network === "twitter") {
+                    button.href = "https://twitter.com/intent/tweet?url=" + pageUrl + "&text=" + pageTitle;
+                }
+
+                if (network === "linkedin") {
+                    button.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + pageUrl;
+                }
+
+                if (network === "whatsapp") {
+                    button.href = "https://wa.me/?text=" + pageTitle + "%20" + pageUrl;
+                }
+
+                if (network === "email") {
+                    button.href = "mailto:?subject=" + pageTitle + "&body=" +
+                        encodeURIComponent("I thought you might find this article interesting: ") + pageUrl;
+                }
+            });
+        });
+    </script>
+
+</body>
 
 </html>

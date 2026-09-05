@@ -1,47 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://thepunitshah.com/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://thepunitshah.com/about.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Passions -->
+  <url>
+    <loc>https://thepunitshah.com/passions.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thepunitshah.com/community.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thepunitshah.com/nature.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://thepunitshah.com/images.html</loc>
+    <priority>0.70</priority>
+  </url>
 
 
-<url>
-  <loc>https://thepunitshah.com/</loc>
-  <lastmod>2025-12-01T03:50:33+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://thepunitshah.com/index.html</loc>
-  <lastmod>2025-12-01T03:50:33+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://thepunitshah.com/about.html</loc>
-  <lastmod>2025-11-25T11:46:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://thepunitshah.com/passions.html</loc>
-  <lastmod>2025-11-25T11:46:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://thepunitshah.com/community.html</loc>
-  <lastmod>2025-11-25T11:46:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://thepunitshah.com/nature.html</loc>
-  <lastmod>2025-11-25T11:46:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://thepunitshah.com/images.html</loc>
-  <lastmod>2025-11-25T11:46:56+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <!-- =========================
+       INSIGHTS / ARTICLES
+  ========================== -->
 
+  <url>
+    <loc>https://thepunitshah.com/article-one.html</loc>
+    <priority>0.80</priority>
+  </url>
 
+  <url>
+    <loc>https://thepunitshah.com/article-two.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thepunitshah.com/article-three.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thepunitshah.com/article-four.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thepunitshah.com/article-five.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thepunitshah.com/article-six.html</loc>
+    <priority>0.80</priority>
+  </url>
+ <url>
+    <loc>https://thepunitshah.com/article-six.html</loc>
+    <lastmod>2026-02-26</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>

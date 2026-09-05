@@ -16,6 +16,59 @@
     <link rel="icon" type="image/png" href="images/FAv icon.png" sizes="32x32">
     <link rel="apple-touch-icon" href="images/FAv icon.png">
 
+
+    <style>
+        /* Back to Passions button */
+        .content-wrapper .back-btn {
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            margin: 28px 0 30px 0 !important;
+            padding: 11px 18px !important;
+            background: #b98200 !important;
+            color: #ffffff !important;
+            border: 1px solid #b98200 !important;
+            border-radius: 7px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.2;
+            text-decoration: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            position: relative;
+            z-index: 20;
+            transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+            box-shadow: 0 7px 18px rgba(185, 130, 0, .18);
+        }
+
+        .content-wrapper .back-btn i {
+            color: #ffffff !important;
+            font-size: 13px;
+        }
+
+        .content-wrapper .back-btn:hover {
+            background: #956900 !important;
+            border-color: #956900 !important;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(185, 130, 0, .25);
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper .back-btn {
+                margin: 20px 0 24px 0 !important;
+                padding: 10px 15px !important;
+                font-size: 13px;
+            }
+        }
+        .content-wrapper {
+            position: relative;
+            padding-top: 150px !important;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -74,16 +127,16 @@
             aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
         </a>
-        <!-- <a href="connect@punitshah.com" class="social-icon mail" aria-label="Mail">
+        <a href="mailto:hello@thepunitshah.com" class="social-icon mail" aria-label="Email">
             <i class="fas fa-envelope"></i>
-        </a> -->
+        </a>
         <a href="https://www.youtube.com/@thepunitshah" target="_blank" class="social-icon youtube"
             aria-label="YouTube">
             <i class="fab fa-youtube"></i>
         </a>
     </div>
     <div class="content-wrapper">
-        <a href="passions.html" class="back-btn">
+        <a href="index.html#bio" class="back-btn">
             <i class="fas fa-arrow-left"></i> Back to Passions
         </a>
 
